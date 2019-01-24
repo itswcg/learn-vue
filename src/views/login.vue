@@ -61,6 +61,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+  @import "../style/mixin";
 
+  .login_page {
+    background: #3190e8;
+  }
 </style>
