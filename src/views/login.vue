@@ -13,7 +13,7 @@
             <el-input v-model="loginForm.password" type="password" placeholder="密码"></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button @click="submitForm('loginForm')" class="submit_btn">登录</el-button>
+            <el-button @click="submitForm('loginForm')" type="primary" class="submit_btn">登录</el-button>
           </el-form-item>
         </el-form>
         <p class="tip">温馨提示：</p>
@@ -65,6 +65,46 @@ export default {
   @import "../style/mixin";
 
   .login_page {
-    background: #3190e8;
+    background: #324057;
+  }
+
+  .manage_tip {
+    position: absolute;
+    width: 100%;
+    top: -100px;
+    left: 0;
+
+    p {
+      font-size: 34px;
+      color: #fff;
+    }
+  }
+
+  .form_contianer {
+    .wh(320px, 210px);
+    .ctp(320px, 210px);
+    padding: 25px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #fff;
+
+    .submit_btn {
+      width: 100%;
+      font-size: 16px;
+    }
+  }
+
+  .tip {
+    font-size: 12px;
+    color: red;
+  }
+
+  .from-fade-enter-active, .form-fade-leave-active {
+    transition: all 1s;
+  }
+
+  .form-fade-enter, .form-fade-leave-active {
+    transform: translate3d(0, -50px, 0);
+    opacity: 0;
   }
 </style>
