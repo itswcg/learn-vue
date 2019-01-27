@@ -16,17 +16,17 @@ const mutations = {
   }
 }
 
-const actions = {
-  async getAdminInfo ({commit}) {
+const actions = { // mutation 必须同步, action 可以异步
+  async getAdminData ({commit}) { // 参数解构 context
     try {
       const res = await getAdminInfo()
       if (res.status === 1) {
-        commit('saveAdminInfo', res.data)
+        commit('saveAdminInfo', res.data) // context.commit
       } else {
         throw new Error(res.type)
       }
     } catch (err) {
-      console.log(err.message)
+      // console.log(err.message)
     }
   }
 }
